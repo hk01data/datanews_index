@@ -5,11 +5,33 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@handsontable/react": "^9.0.1",
+    "axios": "^0.21.1",
+    "batch": "^0.6.1",
+    "date-fns": "^2.23.0",
+    "dotenv": "^10.0.0",
+    "form-data": "^2.3.3",
+    "gray-matter": "^4.0.3",
+    "handsontable": "^9.0.1",
     "next": "^10.0.0",
+    "papaparse": "^5.3.1",
+    "pg": "^8.6.0",
+    "querystring": "^0.2.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "request": "^2.88.2",
+    "unzipper": "^0.10.11"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
   }
 }
