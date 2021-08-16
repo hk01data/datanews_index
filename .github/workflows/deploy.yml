@@ -35,6 +35,8 @@ jobs:
             ${{ runner.OS }}-node-
             ${{ runner.OS }}-
 
+      - run: npm ci
+
       - name: App1
         run: |
           node scripts/app1_getjson.js
@@ -61,12 +63,11 @@ jobs:
 
       - name: Build
         run: |
-          npm ci --legacy-peer-deps
           npm run build
           npm run export
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
