@@ -41,113 +41,113 @@ jobs:
         run: |
           node scripts/app1_getjson.js
         env:
-          CSV_URL: ${{ env.CSV_URL }}
-          FL_APP_PATH: ${{ env.FL_APP_PATH }}
-          FL_PASSWORD: ${{ env.FL_PASSWORD }}
-          FL_USERNAME: ${{ env.FL_USERNAME }}
-          SS_URL: ${{ env.SS_URL }}
-          TABLE_LIST: ${{ env.TABLE_LIST }}
-          TABLE_UNZIP: ${{ env.TABLE_UNZIP }}
-          TYPE_LIST: ${{ env.TYPE_LIST }}
-          TYPE_UNZIP: ${{ env.TYPE_UNZIP }}
-          USER_AGENT: ${{ env.USER_AGENT }}
-          USER_AGENT1: ${{ env.USER_AGENT1 }}
+          CSV_URL: ${{ secrets.CSV_URL }}
+          FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
+          FL_PASSWORD: ${{ secrets.FL_PASSWORD }}
+          FL_USERNAME: ${{ secrets.FL_USERNAME }}
+          SS_URL: ${{ secrets.SS_URL }}
+          TABLE_LIST: ${{ secrets.TABLE_LIST }}
+          TABLE_UNZIP: ${{ secrets.TABLE_UNZIP }}
+          TYPE_LIST: ${{ secrets.TYPE_LIST }}
+          TYPE_UNZIP: ${{ secrets.TYPE_UNZIP }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
+          USER_AGENT1: ${{ secrets.USER_AGENT1 }}
 
       - name: App1.1
         run: |
           node scripts/app1b_convert_date.js
         env:
-          CSV_URL: ${{ env.CSV_URL }}
-          FL_APP_PATH: ${{ env.FL_APP_PATH }}
-          FL_PASSWORD: ${{ env.FL_PASSWORD }}
-          FL_USERNAME: ${{ env.FL_USERNAME }}
-          SS_URL: ${{ env.SS_URL }}
-          TABLE_LIST: ${{ env.TABLE_LIST }}
-          TABLE_UNZIP: ${{ env.TABLE_UNZIP }}
-          TYPE_LIST: ${{ env.TYPE_LIST }}
-          TYPE_UNZIP: ${{ env.TYPE_UNZIP }}
-          USER_AGENT: ${{ env.USER_AGENT }}
-          USER_AGENT1: ${{ env.USER_AGENT1 }}
+          CSV_URL: ${{ secrets.CSV_URL }}
+          FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
+          FL_PASSWORD: ${{ secrets.FL_PASSWORD }}
+          FL_USERNAME: ${{ secrets.FL_USERNAME }}
+          SS_URL: ${{ secrets.SS_URL }}
+          TABLE_LIST: ${{ secrets.TABLE_LIST }}
+          TABLE_UNZIP: ${{ secrets.TABLE_UNZIP }}
+          TYPE_LIST: ${{ secrets.TYPE_LIST }}
+          TYPE_UNZIP: ${{ secrets.TYPE_UNZIP }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
+          USER_AGENT1: ${{ secrets.USER_AGENT1 }}
 
       - name: App2
         run: |
           node scripts/app2_download_zip.js
         env:
-          CSV_URL: ${{ env.CSV_URL }}
-          FL_APP_PATH: ${{ env.FL_APP_PATH }}
-          FL_PASSWORD: ${{ env.FL_PASSWORD }}
-          FL_USERNAME: ${{ env.FL_USERNAME }}
-          SS_URL: ${{ env.SS_URL }}
-          TABLE_LIST: ${{ env.TABLE_LIST }}
-          TABLE_UNZIP: ${{ env.TABLE_UNZIP }}
-          TYPE_LIST: ${{ env.TYPE_LIST }}
-          TYPE_UNZIP: ${{ env.TYPE_UNZIP }}
-          USER_AGENT: ${{ env.USER_AGENT }}
-          USER_AGENT1: ${{ env.USER_AGENT1 }}
+          CSV_URL: ${{ secrets.CSV_URL }}
+          FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
+          FL_PASSWORD: ${{ secrets.FL_PASSWORD }}
+          FL_USERNAME: ${{ secrets.FL_USERNAME }}
+          SS_URL: ${{ secrets.SS_URL }}
+          TABLE_LIST: ${{ secrets.TABLE_LIST }}
+          TABLE_UNZIP: ${{ secrets.TABLE_UNZIP }}
+          TYPE_LIST: ${{ secrets.TYPE_LIST }}
+          TYPE_UNZIP: ${{ secrets.TYPE_UNZIP }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
+          USER_AGENT1: ${{ secrets.USER_AGENT1 }}
 
       - name: App3
         run: |
           node scripts/app3_parse_zip.js
         env:
-          CSV_URL: ${{ env.CSV_URL }}
-          FL_APP_PATH: ${{ env.FL_APP_PATH }}
-          FL_PASSWORD: ${{ env.FL_PASSWORD }}
-          FL_USERNAME: ${{ env.FL_USERNAME }}
-          SS_URL: ${{ env.SS_URL }}
-          TABLE_LIST: ${{ env.TABLE_LIST }}
-          TABLE_UNZIP: ${{ env.TABLE_UNZIP }}
-          TYPE_LIST: ${{ env.TYPE_LIST }}
-          TYPE_UNZIP: ${{ env.TYPE_UNZIP }}
-          USER_AGENT: ${{ env.USER_AGENT }}
-          USER_AGENT1: ${{ env.USER_AGENT1 }}
+          CSV_URL: ${{ secrets.CSV_URL }}
+          FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
+          FL_PASSWORD: ${{ secrets.FL_PASSWORD }}
+          FL_USERNAME: ${{ secrets.FL_USERNAME }}
+          SS_URL: ${{ secrets.SS_URL }}
+          TABLE_LIST: ${{ secrets.TABLE_LIST }}
+          TABLE_UNZIP: ${{ secrets.TABLE_UNZIP }}
+          TYPE_LIST: ${{ secrets.TYPE_LIST }}
+          TYPE_UNZIP: ${{ secrets.TYPE_UNZIP }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
+          USER_AGENT1: ${{ secrets.USER_AGENT1 }}
 
       - name: App4
         run: |
           node scripts/app4_unzip.js
         env:
-          CSV_URL: ${{ env.CSV_URL }}
-          FL_APP_PATH: ${{ env.FL_APP_PATH }}
-          FL_PASSWORD: ${{ env.FL_PASSWORD }}
-          FL_USERNAME: ${{ env.FL_USERNAME }}
-          SS_URL: ${{ env.SS_URL }}
-          TABLE_LIST: ${{ env.TABLE_LIST }}
-          TABLE_UNZIP: ${{ env.TABLE_UNZIP }}
-          TYPE_LIST: ${{ env.TYPE_LIST }}
-          TYPE_UNZIP: ${{ env.TYPE_UNZIP }}
-          USER_AGENT: ${{ env.USER_AGENT }}
-          USER_AGENT1: ${{ env.USER_AGENT1 }}
+          CSV_URL: ${{ secrets.CSV_URL }}
+          FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
+          FL_PASSWORD: ${{ secrets.FL_PASSWORD }}
+          FL_USERNAME: ${{ secrets.FL_USERNAME }}
+          SS_URL: ${{ secrets.SS_URL }}
+          TABLE_LIST: ${{ secrets.TABLE_LIST }}
+          TABLE_UNZIP: ${{ secrets.TABLE_UNZIP }}
+          TYPE_LIST: ${{ secrets.TYPE_LIST }}
+          TYPE_UNZIP: ${{ secrets.TYPE_UNZIP }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
+          USER_AGENT1: ${{ secrets.USER_AGENT1 }}
 
       - name: App5
         run: |
           node scripts/app5_syncsheet.js
         env:
-          CSV_URL: ${{ env.CSV_URL }}
-          FL_APP_PATH: ${{ env.FL_APP_PATH }}
-          FL_PASSWORD: ${{ env.FL_PASSWORD }}
-          FL_USERNAME: ${{ env.FL_USERNAME }}
-          SS_URL: ${{ env.SS_URL }}
-          TABLE_LIST: ${{ env.TABLE_LIST }}
-          TABLE_UNZIP: ${{ env.TABLE_UNZIP }}
-          TYPE_LIST: ${{ env.TYPE_LIST }}
-          TYPE_UNZIP: ${{ env.TYPE_UNZIP }}
-          USER_AGENT: ${{ env.USER_AGENT }}
-          USER_AGENT1: ${{ env.USER_AGENT1 }}
+          CSV_URL: ${{ secrets.CSV_URL }}
+          FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
+          FL_PASSWORD: ${{ secrets.FL_PASSWORD }}
+          FL_USERNAME: ${{ secrets.FL_USERNAME }}
+          SS_URL: ${{ secrets.SS_URL }}
+          TABLE_LIST: ${{ secrets.TABLE_LIST }}
+          TABLE_UNZIP: ${{ secrets.TABLE_UNZIP }}
+          TYPE_LIST: ${{ secrets.TYPE_LIST }}
+          TYPE_UNZIP: ${{ secrets.TYPE_UNZIP }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
+          USER_AGENT1: ${{ secrets.USER_AGENT1 }}
 
       - name: App6
         run: |
           node scripts/app6_tsv.js
         env:
-          CSV_URL: ${{ env.CSV_URL }}
-          FL_APP_PATH: ${{ env.FL_APP_PATH }}
-          FL_PASSWORD: ${{ env.FL_PASSWORD }}
-          FL_USERNAME: ${{ env.FL_USERNAME }}
-          SS_URL: ${{ env.SS_URL }}
-          TABLE_LIST: ${{ env.TABLE_LIST }}
-          TABLE_UNZIP: ${{ env.TABLE_UNZIP }}
-          TYPE_LIST: ${{ env.TYPE_LIST }}
-          TYPE_UNZIP: ${{ env.TYPE_UNZIP }}
-          USER_AGENT: ${{ env.USER_AGENT }}
-          USER_AGENT1: ${{ env.USER_AGENT1 }}
+          CSV_URL: ${{ secrets.CSV_URL }}
+          FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
+          FL_PASSWORD: ${{ secrets.FL_PASSWORD }}
+          FL_USERNAME: ${{ secrets.FL_USERNAME }}
+          SS_URL: ${{ secrets.SS_URL }}
+          TABLE_LIST: ${{ secrets.TABLE_LIST }}
+          TABLE_UNZIP: ${{ secrets.TABLE_UNZIP }}
+          TYPE_LIST: ${{ secrets.TYPE_LIST }}
+          TYPE_UNZIP: ${{ secrets.TYPE_UNZIP }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
+          USER_AGENT1: ${{ secrets.USER_AGENT1 }}
 
       - name: Build
         run: |
