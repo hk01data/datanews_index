@@ -50,6 +50,10 @@ function main() {
   ids.forEach(function (item) {
     let filename = item['id']
 
+    if ('visualisation' !== item['project_type']) {
+      return
+    }
+
     let atext = fs.readFileSync(`public/zip/unzip/${filename}/index.html`)
 
     const stpos = atext.indexOf('var _Flourish_settings')

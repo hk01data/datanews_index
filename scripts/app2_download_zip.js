@@ -33,7 +33,7 @@ function readJSON() {
 }
 
 function makeConcurrent(cookieString) {
-  batch.concurrency(10)
+  batch.concurrency(1)
 
   let ids = readJSON()['projects_and_tags']
 
@@ -42,7 +42,7 @@ function makeConcurrent(cookieString) {
       let path = `/${item['project_type']}/${item['id']}/download?`
       if ('story' === item['project_type']) {
         // Skip download story type
-        downloadBinary(path, item['id'], cookieString, done)
+        // downloadBinary(path, item['id'], cookieString, done)
         (function(){}())
       } else {
         downloadBinary(path, item['id'], cookieString, done)
