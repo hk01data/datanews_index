@@ -10,6 +10,7 @@ on:
 jobs:
   deployment:
     environment: DEPLOY_ENV
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     strategy:
@@ -73,6 +74,7 @@ jobs:
       - name: App2
         run: |
           node scripts/app2_download_zip.js
+        timeout-minutes: 20
         env:
           CSV_URL: ${{ secrets.CSV_URL }}
           FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
