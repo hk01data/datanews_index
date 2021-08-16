@@ -53,6 +53,22 @@ jobs:
           USER_AGENT: ${{ env.USER_AGENT }}
           USER_AGENT1: ${{ env.USER_AGENT1 }}
 
+      - name: App1.1
+        run: |
+          node scripts/app1.1_convert_date.js
+        env:
+          CSV_URL: ${{ env.CSV_URL }}
+          FL_APP_PATH: ${{ env.FL_APP_PATH }}
+          FL_PASSWORD: ${{ env.FL_PASSWORD }}
+          FL_USERNAME: ${{ env.FL_USERNAME }}
+          SS_URL: ${{ env.SS_URL }}
+          TABLE_LIST: ${{ env.TABLE_LIST }}
+          TABLE_UNZIP: ${{ env.TABLE_UNZIP }}
+          TYPE_LIST: ${{ env.TYPE_LIST }}
+          TYPE_UNZIP: ${{ env.TYPE_UNZIP }}
+          USER_AGENT: ${{ env.USER_AGENT }}
+          USER_AGENT1: ${{ env.USER_AGENT1 }}
+
       - name: App2
         run: |
           node scripts/app2_download_zip.js
