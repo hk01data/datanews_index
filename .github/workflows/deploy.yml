@@ -90,7 +90,7 @@ jobs:
 
       - name: App3
         run: |
-          node scripts/app3_parse_zip.js
+          node scripts/app3_unzip.js
         env:
           CSV_URL: ${{ secrets.CSV_URL }}
           FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
@@ -106,7 +106,7 @@ jobs:
 
       - name: App4
         run: |
-          node scripts/app4_unzip.js
+          node scripts/app4_parse_zip.js
         env:
           CSV_URL: ${{ secrets.CSV_URL }}
           FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
