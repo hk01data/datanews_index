@@ -33,7 +33,7 @@ function readJSON() {
 }
 
 function makeConcurrent(cookieString) {
-  batch.concurrency(150)
+  batch.concurrency(80)
 
   let ids = readJSON()['projects_and_tags']
 
