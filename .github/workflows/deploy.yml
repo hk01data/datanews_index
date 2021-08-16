@@ -123,6 +123,7 @@ jobs:
       - name: App5
         run: |
           node scripts/app5_syncsheet.js
+        timeout-minutes: 20
         env:
           CSV_URL: ${{ secrets.CSV_URL }}
           FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
