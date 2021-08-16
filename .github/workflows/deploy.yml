@@ -55,7 +55,7 @@ jobs:
 
       - name: App1.1
         run: |
-          node scripts/app1.1_convert_date.js
+          node scripts/app1b_convert_date.js
         env:
           CSV_URL: ${{ env.CSV_URL }}
           FL_APP_PATH: ${{ env.FL_APP_PATH }}
