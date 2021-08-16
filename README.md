@@ -1,10 +1,6 @@
 # Datanews flourish index
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
-- [v node] download index
-- [v python] download zips
-- [v python] extract zip content
-
 ## Development
 
 ```
