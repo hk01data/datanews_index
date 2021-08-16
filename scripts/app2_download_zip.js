@@ -9,7 +9,7 @@ function downloadBinary(path, filename, cookieString, done) {
   const options = {
     url: `https://app.flourish.studio${path}`,
     encoding: null,
-    timeout: 30000,
+    timeout: 60000,
     headers: {
       'Cookie': cookieString,
       'Referer': `https://app.flourish.studio/visualisation/${filename}/edit`,
@@ -33,7 +33,7 @@ function readJSON() {
 }
 
 function makeConcurrent(cookieString) {
-  batch.concurrency(100)
+  batch.concurrency(150)
 
   let ids = readJSON()['projects_and_tags']
 
