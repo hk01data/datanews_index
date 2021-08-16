@@ -1,61 +1,92 @@
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import Link from 'next/link'
 
-export default function Home() {
+import Layout, { siteTitle } from '../components/layout'
+import Sidebar from '../components/Sidebar'
+
+import utilStyles from '../styles/utils.module.css'
+import 'handsontable/dist/handsontable.full.css'
+
+import { getSortedPostsData } from '../lib/posts'
+
+/**
+ * Missing "window" work-around
+ * https://github.com/handsontable/handsontable/issues/7445
+ */
+const HotApp = dynamic(
+  () => import('./../components/Htable'),
+  { ssr: false }
+)
+
+
+export async function getStaticProps() {
+  const allPostsData = await getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
+
+
+export default function Home({ allPostsData }) {
   return (
-    <div className="container">
+    <Layout home>
       <Head>
-        <title>Create Next App</title>
+        <title>Datanews 作品集</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Sidebar allPostsData={allPostsData}>
+      </Sidebar>
+
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <Link href="https://www.hk01.com/channel/460">
+            <a>研數所 Channel</a>
+          </Link>
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          Data can tell the story.
         </p>
 
         <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+            <h3>研數所 &rarr;</h3>
+            <p>熱門關注議題互動圖表</p>
           </a>
 
           <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+            <h3>香港01 &rarr;</h3>
+            <p>網絡新聞資訊一站式服務平台</p>
           </a>
 
           <a
             href="https://github.com/vercel/next.js/tree/master/examples"
             className="card"
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <h3>Data.gov.hk &rarr;</h3>
+            <p>政府資料一線通</p>
           </a>
 
           <a
             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className="card"
           >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+            <h3>GitHub &rarr;</h3>
+            <p>數據新聞程式碼</p>
           </a>
         </div>
       </main>
 
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
+        <a href="https://www.hk01.com/">
+          香港01有限公司版權所有 &copy;
+          {
+            ` ${(new Date).getFullYear()}`
+          }
         </a>
       </footer>
 
@@ -204,6 +235,6 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </Layout>
   )
 }

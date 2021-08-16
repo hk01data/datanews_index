@@ -1,5 +1,5 @@
 {
-  "name": "learn-starter",
+  "name": "datanews-index",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
     "@handsontable/react": "^9.0.1",
     "axios": "^0.21.1",
     "batch": "^0.6.1",
+    "chrono-node": "^2.3.1",
     "date-fns": "^2.23.0",
     "dotenv": "^10.0.0",
     "form-data": "^2.3.3",

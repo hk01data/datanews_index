@@ -1,0 +1,72 @@
+name: Deploy to Github Pages
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Use NPM 7
+        run: npm i -g npm@latest
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+
+      - name: App1
+        run: |
+          node scripts/app1_getjson.js
+
+      - name: App2
+        run: |
+          node scripts/app2_download_zip.js
+
+      - name: App3
+        run: |
+          node scripts/app3_parse_zip.js
+
+      - name: App4
+        run: |
+          node scripts/app4_unzip.js
+
+      - name: App5
+        run: |
+          node scripts/app5_syncsheet.js
+
+      - name: App6
+        run: |
+          node scripts/app6_tsv.js
+
+      - name: Build
+        run: |
+          npm ci --legacy-peer-deps
+          npm run build
+          npm run export
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./out
