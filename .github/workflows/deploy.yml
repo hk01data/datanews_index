@@ -9,6 +9,7 @@ on:
 
 jobs:
   deployment:
+    environment: DEPLOY_ENV
     runs-on: ubuntu-latest
 
     strategy:
