@@ -120,22 +120,23 @@ jobs:
           USER_AGENT: ${{ secrets.USER_AGENT }}
           USER_AGENT1: ${{ secrets.USER_AGENT1 }}
 
-      - name: App5
-        run: |
-          node scripts/app5_syncsheet.js
-        timeout-minutes: 20
-        env:
-          CSV_URL: ${{ secrets.CSV_URL }}
-          FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
-          FL_PASSWORD: ${{ secrets.FL_PASSWORD }}
-          FL_USERNAME: ${{ secrets.FL_USERNAME }}
-          SS_URL: ${{ secrets.SS_URL }}
-          TABLE_LIST: ${{ secrets.TABLE_LIST }}
-          TABLE_UNZIP: ${{ secrets.TABLE_UNZIP }}
-          TYPE_LIST: ${{ secrets.TYPE_LIST }}
-          TYPE_UNZIP: ${{ secrets.TYPE_UNZIP }}
-          USER_AGENT: ${{ secrets.USER_AGENT }}
-          USER_AGENT1: ${{ secrets.USER_AGENT1 }}
+      # # Skipped due to 1m30s of GitHub timeout
+      # - name: App5
+      #   run: |
+      #     node scripts/app5_syncsheet.js
+      #   timeout-minutes: 20
+      #   env:
+      #     CSV_URL: ${{ secrets.CSV_URL }}
+      #     FL_APP_PATH: ${{ secrets.FL_APP_PATH }}
+      #     FL_PASSWORD: ${{ secrets.FL_PASSWORD }}
+      #     FL_USERNAME: ${{ secrets.FL_USERNAME }}
+      #     SS_URL: ${{ secrets.SS_URL }}
+      #     TABLE_LIST: ${{ secrets.TABLE_LIST }}
+      #     TABLE_UNZIP: ${{ secrets.TABLE_UNZIP }}
+      #     TYPE_LIST: ${{ secrets.TYPE_LIST }}
+      #     TYPE_UNZIP: ${{ secrets.TYPE_UNZIP }}
+      #     USER_AGENT: ${{ secrets.USER_AGENT }}
+      #     USER_AGENT1: ${{ secrets.USER_AGENT1 }}
 
       - name: App6
         run: |
