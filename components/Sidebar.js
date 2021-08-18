@@ -5,9 +5,11 @@ import Searchbox from '../components/Searchbox'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 
-export default function Sidebar({ allPostsData, postId }) {
+export default function Sidebar({ allPostsData, postId, navbarOpen }) {
+  const navclass = (navbarOpen ? " flex" : " hidden")
+
   return (
-    <aside className={styles.sidebar}>
+    <aside className={styles.sidebar + navclass}>
       <Searchbox />
 
       <ul className={utilStyles.list}>

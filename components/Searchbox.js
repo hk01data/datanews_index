@@ -5,7 +5,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons"; // import the icons 
 
 export default function Searchbox({ doc_id }) {
   return (
-    <div className="flex">
+    <div className="p-2 flex justify-between">
       <Link className="w-1/5" href="/" title="首頁">
         <Icon icon={faHome} />
       </Link>

@@ -30,7 +30,13 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default function Post({ postData, allPostsData }) {
+function Adiv ({children}) {
+  return (<div>
+    {children}
+  </div>)
+}
+
+export default function Post({ postData, allPostsData, navbarOpen }) {
   const router = useRouter()
   const { id } = router.query
 
@@ -48,10 +54,10 @@ export default function Post({ postData, allPostsData }) {
       <title>{postData.ctitle}</title>
     </Head>
 
-    <Sidebar allPostsData={allPostsData} postId={id}>
+    <Sidebar allPostsData={allPostsData} postId={id} navbarOpen={navbarOpen}>
     </Sidebar>
 
-    <div>
+    <Adiv>
       <h1 className={utilStyles.headingXl}>{postData.ctitle}</h1>
       <br />
       ({postData.id})
@@ -70,6 +76,6 @@ export default function Post({ postData, allPostsData }) {
       {
         postData.settings
       }
-    </div>
+    </Adiv>
   </Layout>
 }

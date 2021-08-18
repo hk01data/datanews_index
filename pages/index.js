@@ -29,8 +29,13 @@ export async function getStaticProps() {
   }
 }
 
+function Adiv ({children}) {
+  return (<div>
+    {children}
+  </div>)
+}
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, navbarOpen }) {
   return (
     <Layout home>
       <Head>
@@ -38,57 +43,59 @@ export default function Home({ allPostsData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Sidebar allPostsData={allPostsData}>
+      <Sidebar allPostsData={allPostsData} navbarOpen={navbarOpen}>
       </Sidebar>
 
-      <main>
-        <h1 className="title">
-          <Link href="https://www.hk01.com/channel/460">
-            <a>研數所 Channel</a>
-          </Link>
-        </h1>
+      <Adiv>
+        <main>
+          <h1 className="title">
+            <Link href="https://www.hk01.com/channel/460">
+              <a>研數所 Channel</a>
+            </Link>
+          </h1>
 
-        <p className="description">
-          Data can tell the story.
-        </p>
+          <p className="description">
+            Data can tell the story.
+          </p>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>研數所 &rarr;</h3>
-            <p>熱門關注議題互動圖表</p>
+          <div className="grid">
+            <a href="https://nextjs.org/docs" className="card">
+              <h3>研數所 &rarr;</h3>
+              <p>熱門關注議題互動圖表</p>
+            </a>
+
+            <a href="https://nextjs.org/learn" className="card">
+              <h3>香港01 &rarr;</h3>
+              <p>網絡新聞資訊一站式服務平台</p>
+            </a>
+
+            <a
+              href="https://github.com/vercel/next.js/tree/master/examples"
+              className="card"
+            >
+              <h3>Data.gov.hk &rarr;</h3>
+              <p>政府資料一線通</p>
+            </a>
+
+            <a
+              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              className="card"
+            >
+              <h3>GitHub &rarr;</h3>
+              <p>數據新聞程式碼</p>
+            </a>
+          </div>
+        </main>
+
+        <footer>
+          <a href="https://www.hk01.com/">
+            香港01有限公司版權所有 &copy;
+            {
+              ` ${(new Date).getFullYear()}`
+            }
           </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>香港01 &rarr;</h3>
-            <p>網絡新聞資訊一站式服務平台</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Data.gov.hk &rarr;</h3>
-            <p>政府資料一線通</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>GitHub &rarr;</h3>
-            <p>數據新聞程式碼</p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a href="https://www.hk01.com/">
-          香港01有限公司版權所有 &copy;
-          {
-            ` ${(new Date).getFullYear()}`
-          }
-        </a>
-      </footer>
+        </footer>
+      </Adiv>
 
       <style jsx>{`
         .container {
