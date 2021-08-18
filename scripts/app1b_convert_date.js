@@ -12,11 +12,15 @@ function convertDate () {
 
   if (ajson['projects_and_tags']) {
     newTs = ajson['projects_and_tags'].map(o => {
+      if ('story' == o['project_type']) {
+        return null
+      }
       return {
         ...o,
         timestamp_str: chrono.parseDate(o['timestamp_str'], dateNowObj)
       }
     })
+    .filter(o => o !== null)
   }
 
   let bjson = JSON.parse(res)
