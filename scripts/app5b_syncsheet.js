@@ -5,24 +5,26 @@ const request = require('request')
 
 const baseurl = process.env.SS_URL
 const USER_AGENT = process.env.USER_AGENT
-const TYPE_LIST = process.env.TYPE_LIST
-const TABLE_LIST = process.env.TABLE_LIST
-
-function readJSON () {
-  let res = fs.readFileSync(`public/list_ts.json`)
-  return JSON.parse(res)
-}
+const TYPE_UNZIP = process.env.TYPE_UNZIP
+const TABLE_UNZIP = process.env.TABLE_UNZIP
 
 
-function syncSheetList () {
+function syncSheetUnzip () {
   // Read json
-  let listJson = readJSON()
-  const schema = [ "id", "name", "project_type", "is_folder", "version_number", "timestamp_str", "is_published", "thumbnail", "showcase_url" ]
-  let newJson = listJson["projects_and_tags"].map((o, idx) => schema.map(x => o[x] ? o[x].toString() : "-"))
+  let res = fs.readFileSync(`public/new_data_source.json`)
+  let listJson = JSON.parse(res)
+  const schema = [ "doc_id", "ts", "prjtype", "prjname", "settings", "data_column_names", "data_metadata", "data"]
+  let newJson = listJson.map((o, idx) => schema.map(x => {
+    if (-1 !== ['doc_id', 'prjtype', 'prjname'].indexOf(x)) {
+      return o[x]
+    } else {
+      return o[x] ? JSON.stringify(o[x]) : "-"
+    }
+  }))
 
   const dataRaw = {
-    type: TYPE_LIST,
-    table: TABLE_LIST,
+    type: TYPE_UNZIP,
+    table: TABLE_UNZIP,
     json: newJson
   }
   const data = JSON.stringify(dataRaw)
@@ -48,7 +50,7 @@ function syncSheetList () {
 
 
 function main() {
-  syncSheetList()
+  syncSheetUnzip()
 }
 
 main()
