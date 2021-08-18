@@ -47,8 +47,10 @@ export default function Layout({ children, home }) {
             <Icon icon={faBars}/>
             <span>Menu</span>
           </button>
+        </header>
 
-          {home ? (
+        {
+          home ? (
             <>
               <Image
                 priority
@@ -61,8 +63,9 @@ export default function Layout({ children, home }) {
               />
               <h1 className={utilStyles.heading2Xl}>{name}</h1>
             </>
-          ) : null}
-        </header>
+          ) : null
+        }
+
 
         <div className={styles.container}>
           {
