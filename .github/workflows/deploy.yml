@@ -140,7 +140,7 @@ jobs:
 
       - name: App5b - syncsheet phase 2
         run: |
-          node scripts/app5_syncsheet.js
+          node scripts/app5b_syncsheet.js
         timeout-minutes: 20
         env:
           CSV_URL: ${{ secrets.CSV_URL }}
