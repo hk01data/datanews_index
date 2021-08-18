@@ -6,7 +6,7 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 
 export default function Sidebar({ allPostsData, postId, navbarOpen }) {
-  const navclass = (navbarOpen ? " flex" : " hidden")
+  const navclass = (navbarOpen ? " block" : " hidden")
 
   return (
     <aside className={styles.sidebar + navclass}>

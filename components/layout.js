@@ -45,6 +45,7 @@ export default function Layout({ children, home }) {
         <header className={styles.header}>
           <button className="text-right" onClick={() => setNavbarOpen(!navbarOpen)}>
             <Icon icon={faBars}/>
+            <span>Menu</span>
           </button>
 
           {home ? (
